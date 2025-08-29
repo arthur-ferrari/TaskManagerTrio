@@ -1,4 +1,4 @@
-package com.exemplo.taskmanager;
+
 
 public class Tarefa {
     private String descricao;
