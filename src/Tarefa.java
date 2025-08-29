@@ -26,3 +26,4 @@ public class Tarefa {
         return (concluida ? "[X] " : "[ ] ") + descricao;
     }
 }
+
