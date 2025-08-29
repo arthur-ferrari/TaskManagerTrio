@@ -3,43 +3,25 @@ package com.exemplo.taskmanager;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tarefa {
-    private String descricao;
-    private boolean concluida;
+public class GerenciadorTarefas {
+    private final List<Tarefa> tarefas = new ArrayList<>();
 
-    // Lista estática para armazenar as tarefas
-    private static List<Tarefa> tarefas = new ArrayList<>();
-
-    public Tarefa(String descricao) {
-        this.descricao = descricao;
-        this.concluida = false;
+    // Dev A
+    public void adicionarTarefa(String descricao) {
+        tarefas.add(new Tarefa(descricao));
     }
 
-    public String getDescricao() {
-        return descricao;
+    // Dev B
+    public List<Tarefa> listarTarefas() {
+        return new ArrayList<Tarefa>(tarefas);
     }
 
-    public boolean isConcluida() {
-        return concluida;
-    }
-
-    public void concluir() {
-        this.concluida = true;
-    }
-
-    @Override
-    public String toString() {
-        return (concluida ? "[X] " : "[ ] ") + descricao;
-    }
-
-    // 🔹 Método solicitado: adicionarTarefa
-    public static void adicionarTarefa(String descricao) {
-        Tarefa nova = new Tarefa(descricao);
-        tarefas.add(nova);
-    }
-
-    // Getter para recuperar a lista (vai ser útil no listarTarefas do Dev B)
-    public static List<Tarefa> getTarefas() {
-        return tarefas;
+    // Dev C
+    public boolean removerTarefa(int indice) {
+        if (indice >= 0 && indice < tarefas.size()) {
+            tarefas.remove(indice);
+            return true;
+        }
+        return false;
     }
 }
