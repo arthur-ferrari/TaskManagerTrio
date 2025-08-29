@@ -8,11 +8,7 @@ public class Main {
         GerenciadorTarefas manager = new GerenciadorTarefas(); // Instância do gerenciador
         Scanner sc = new Scanner(System.in);                   // Leitor do console
         boolean sair = false;
-<<<<<<< Updated upstream
-
-=======
-//a
->>>>>>> Stashed changes
+//teste
         while (!sair) {
             System.out.println("\n=== TaskManagerTrio ===");
             System.out.println("1) Adicionar tarefa");
